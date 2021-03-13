@@ -1,8 +1,14 @@
 import RepositoryList from "./components/RepositoryList";
+import { Counter } from "./components/Counter";
 import "./styles/global.scss";
 
 const App = () => {
-  return <RepositoryList />;
+  return (
+    <>
+      <Counter />
+      <RepositoryList />
+    </>
+  );
 };
 
 export default App;
