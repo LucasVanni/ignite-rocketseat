@@ -1,4 +1,10 @@
-const repositoryName = "teste";
+import RepositoryItem from "./RepositoryItem";
+
+const repository = {
+  name: "teste",
+  description: "Bem vindo ao teste",
+  link: "https://github.com/",
+};
 
 const RepositoryList = () => {
   return (
@@ -6,12 +12,8 @@ const RepositoryList = () => {
       <h1>Lista de repositórios</h1>
 
       <ul>
-        <li>
-          <strong>{repositoryName}</strong>
-          <p>Default description</p>
-
-          <a href="">Acessar repositório</a>
-        </li>
+        <RepositoryItem repository={repository} />
+        <RepositoryItem />
       </ul>
     </section>
   );
