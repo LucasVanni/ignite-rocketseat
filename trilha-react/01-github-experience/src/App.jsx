@@ -5,8 +5,8 @@ import "./styles/global.scss";
 const App = () => {
   return (
     <>
-      <Counter />
       <RepositoryList />
+      <Counter />
     </>
   );
 };
