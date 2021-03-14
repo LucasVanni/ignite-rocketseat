@@ -7,8 +7,15 @@ import "../styles/repositories.scss";
 // https://api.github.com/users/lucasvanni
 // https://api.github.com/users/LucasVanni/repos
 
+interface Repository {
+    name: string, 
+    description: string, 
+    html_url: string,
+}
+
+
 const RepositoryList = () => {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/orgs/rocketseat/repos")
