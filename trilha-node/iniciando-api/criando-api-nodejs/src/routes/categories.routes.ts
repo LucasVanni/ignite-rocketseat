@@ -1,9 +1,14 @@
 import { Router, Request, Response } from 'express';
-import { Category } from '../model/Category';
 import { CategoriesRepository } from '../repositories/CategoriesRepository';
 
 const categoriesRoutes = Router();
 const categoryRepository = new CategoriesRepository();
+
+categoriesRoutes.get('/', (_req: Request, res: Response) => {
+    const categories = categoryRepository.findAll();
+
+    return res.status(200).json(categories);
+});
 
 categoriesRoutes.post('/', (req: Request, res: Response) => {
     const { name, description } = req.body;

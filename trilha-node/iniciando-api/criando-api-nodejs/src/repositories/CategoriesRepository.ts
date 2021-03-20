@@ -12,6 +12,10 @@ class CategoriesRepository {
         this.categories = [];
     }
 
+    findAll() {
+        return this.categories;
+    }
+
     // Responsável por cadastrar nossa categoria
     create({ name, description }: ICreateCategoryDTO): void {
         const category = new Category();
