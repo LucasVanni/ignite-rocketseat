@@ -1,11 +1,10 @@
 import { Category } from '../model/Category';
+import {
+    ICreateCategoryDTO,
+    ICreateCategoriesRepository,
+} from './ICreateCategoriesRepository';
 
-interface ICreateCategoryDTO {
-    name: string;
-    description: string;
-}
-
-class CategoriesRepository {
+class CategoriesRepository implements ICreateCategoriesRepository {
     private categories: Category[];
 
     constructor() {
