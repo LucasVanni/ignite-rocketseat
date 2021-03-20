@@ -12,7 +12,7 @@ class CategoriesRepository {
         this.categories = [];
     }
 
-    findAll() {
+    findAll(): Category[] {
         return this.categories;
     }
 
