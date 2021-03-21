@@ -1,8 +1,8 @@
 import { Category } from '../../model/Category';
-import { CategoriesRepository } from '../../repositories/CategoriesRepository';
+import { ICreateCategoriesRepository } from '../../repositories/ICreateCategoriesRepository';
 
 class ListCategoryUseCase {
-    constructor(private categoriesRepository: CategoriesRepository) {}
+    constructor(private categoriesRepository: ICreateCategoriesRepository) {}
 
     execute(): Category[] {
         return this.categoriesRepository.findAll();
