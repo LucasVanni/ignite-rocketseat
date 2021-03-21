@@ -56,8 +56,6 @@ class ImportCategoryUseCase {
                 this.categoriesRepository.create({ name, description });
             }
         });
-
-        // this.categoriesRepository.
     }
 }
 
