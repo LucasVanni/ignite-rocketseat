@@ -15,8 +15,8 @@ class ImportCategoryUseCase {
             const categories: IImportCategory[] = [];
 
             /* Cria uma stream de 
-            leitura para o path do arquivo
-        */
+                leitura para o path do arquivo
+            */
             const stream = fs.createReadStream(file.path);
 
             // Convertendo o CSV
@@ -36,6 +36,7 @@ class ImportCategoryUseCase {
                     categories.push({ name, description });
                 })
                 .on('end', () => {
+                    fs.promises.unlink(file.path);
                     resolve(categories);
                 })
                 .on('error', (err) => {
