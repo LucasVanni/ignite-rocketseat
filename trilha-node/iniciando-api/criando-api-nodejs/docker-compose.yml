@@ -1,22 +1,30 @@
-version: '2'
+version: '3.9'
 
 services:
+    database:
+        image: postgres
+        container_name: database_ignite
+        restart: always
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_USER=docker
+            - POSTGRES_PASSWORD=ignite
+            - POSTGRES_DB=rent
+        volumes:
+            - pgdata:/data/postgres
     app:
         build: .
+        container_name: ignite
         ports:
-            - 9000:9000
-        links:
-            - mongo:mongo
-        environment:
-            MONGODB_URL: mongodb://mongo:27017/impact
-
-    mongo:
-        image: mongo
-
-    restore:
-        image: mongo
+            - 3333:3333
         volumes:
-            - ./dump:/var/dump
+            - .:/usr/app
         links:
-            - mongo:mongo
-        command: mongorestore --host mongo:27017 --db impact /var/dump/impact
+            - database
+        depends_on:
+            - database
+
+volumes:
+    pgdata:
+        driver: local
