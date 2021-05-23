@@ -9,7 +9,7 @@ class CreateSpecificationUseCase {
     constructor(private specificationsRepository: ISpecificationsRepository) {}
 
     async execute({ name, description }: IRequest): Promise<void> {
-        const specificationAlreadyExistis = this.specificationsRepository.findByName(
+        const specificationAlreadyExistis = await this.specificationsRepository.findByName(
             name
         );
 
