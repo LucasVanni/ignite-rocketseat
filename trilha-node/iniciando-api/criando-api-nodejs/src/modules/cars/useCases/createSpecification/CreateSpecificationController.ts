@@ -6,11 +6,14 @@ class CreateSpecificationController {
         private createSpecificationUseCase: CreateSpecificationUseCase
     ) {}
 
-    handle(req: Request, res: Response): Response {
+    async handle(req: Request, res: Response): Promise<Response> {
         try {
             const { name, description } = req.body;
 
-            this.createSpecificationUseCase.execute({ name, description });
+            await this.createSpecificationUseCase.execute({
+                name,
+                description,
+            });
 
             return res.status(201).send();
         } catch (err) {
