@@ -7,7 +7,7 @@ import { v4 as uuidV4 } from 'uuid';
     com a tabela categories que foi criada pela 
     migration
 */
-@Entity('Categories')
+@Entity('categories')
 class Category {
     // Coluna primária, que será o id da migration.
     @PrimaryColumn()
