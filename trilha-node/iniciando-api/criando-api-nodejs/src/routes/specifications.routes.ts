@@ -5,11 +5,9 @@ import { ListSpecificationController } from '../modules/cars/useCases/listSpecif
 const specificationsRoutes = Router();
 
 const listSpecificationController = new ListSpecificationController();
-
-specificationsRoutes.get('/', listSpecificationController.handle);
-
 const createSpecificationController = new CreateSpecificationController();
 
+specificationsRoutes.get('/', listSpecificationController.handle);
 specificationsRoutes.post('/', createSpecificationController.handle);
 
 export { specificationsRoutes };
