@@ -7,25 +7,25 @@ class User {
     id?: string;
 
     @Column()
-    name?: string;
+    name: string;
 
     @Column()
-    username?: string;
+    username: string;
 
     @Column()
-    password?: string;
+    password: string;
 
     @Column()
-    email?: string;
+    email: string;
 
     @Column()
-    drive_license?: string;
+    drive_license: string;
 
     @Column()
-    is_admin?: boolean;
+    is_admin: boolean;
 
     @CreateDateColumn()
-    created_at?: Date;
+    created_at: Date;
 
     constructor() {
         if (!this.id) {
