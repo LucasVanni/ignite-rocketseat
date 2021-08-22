@@ -10,6 +10,10 @@ class UsersRepository implements IUsersRepository {
         this.repository = getRepository(User);
     }
 
+    async findById(id: string): Promise<User> {
+        return this.repository.findOne(id);
+    }
+
     async findByEmail(email: string): Promise<User> {
         return this.repository.findOne({ email });
     }
